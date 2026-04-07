@@ -145,3 +145,5 @@ data/transactions.json
 #Terraform Local Files
 .terraform/
 .terraform.lock.hcl
+terraform.tfstate  
+terraform.tfstate.backup
