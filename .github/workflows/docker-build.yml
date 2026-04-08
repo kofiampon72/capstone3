@@ -122,10 +122,14 @@ jobs:
             cd /opt/dumbbudget
 
             # Pull the latest code (for compose file updates)
-            if [ -d .git ]; then
+            if [ -d "capstone3/.git" ]; then
+            echo "Git repository exists, pulling latest changes..."
+            cd capstone3
               git pull origin main
             else
+            echo "Cloning repository..."
               git clone --depth 1 --branch main https://github.com/kofiampon72/capstone3.git
+              cd capstone3
             fi
 
             # Pull the latest Docker images
