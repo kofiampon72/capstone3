@@ -15,8 +15,9 @@ scrape_configs:
       - targets: ['host.docker.internal:9100']  
 
   # DumbBudget app metrics (if you add /metrics endpoint later)
-  - job_name: 'dumbbudget'
-    static_configs:
-      - targets: ['dumbbudget:3000']
-    metrics_path: '/metrics'
-    # Will 404 until you add prom-client — Prometheus will just skip it gracefully
+  # - job_name: 'dumbbudget'
+  #   static_configs:
+  #     - targets: ['dumbbudget:3000']
+  #   metrics_path: '/metrics'
+    # Will 404 "untilprom-client" is added — Prometheus will just skip it gracefully
+
