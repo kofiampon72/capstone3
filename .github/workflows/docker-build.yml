@@ -118,10 +118,15 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             # Navigate to the app directory
+            mkdir -p /opt/dumbbudget
             cd /opt/dumbbudget
 
             # Pull the latest code (for compose file updates)
-            git pull origin main
+            if [ -d .git ]; then
+              git pull origin main
+            else
+              git clone --depth 1 --branch main https://github.com/dumbbudget/dumbbudget.git
+            fi
 
             # Pull the latest Docker images
             docker compose pull
