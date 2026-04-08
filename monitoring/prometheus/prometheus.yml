@@ -8,10 +8,11 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
-  # Node Exporter: system-level metrics (CPU, RAM, disk, network)
+  # Node Exporter running natively on the EC2 host
   - job_name: 'node-exporter'
     static_configs:
-      - targets: ['node-exporter:9100']
+    # Use host.docker.internal to access the host's Node Exporter
+      - targets: ['host.docker.internal:9100']  
 
   # DumbBudget app metrics (if you add /metrics endpoint later)
   - job_name: 'dumbbudget'
