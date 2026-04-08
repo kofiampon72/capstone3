@@ -125,7 +125,7 @@ jobs:
             if [ -d .git ]; then
               git pull origin main
             else
-              git clone --depth 1 --branch main https://github.com/dumbbudget/dumbbudget.git
+              git clone --depth 1 --branch main https://github.com/kofiampon72/capstone3.git
             fi
 
             # Pull the latest Docker images
